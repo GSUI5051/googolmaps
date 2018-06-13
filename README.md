@@ -2,38 +2,41 @@
 
 ## What is 'OrdinalMahjong' ?
 - 'OrdinalMahjong' is a mahjong game with the tiles on which the ordinals are printed.
-- ‡˜”–ƒ‚Í‡˜”‚ª‘‚©‚ê‚½”v‚Ås‚¤–ƒƒQ[ƒ€‚Å‚·B
+- é †åºæ•°éº»é›€ã¯é †åºæ•°ãŒæ›¸ã‹ã‚ŒãŸç‰Œã§è¡Œã†éº»é›€ã‚²ãƒ¼ãƒ ã§ã™ã€‚
 
 ## Recruitments
 
 Recruitment illustrator
-ƒCƒ‰ƒXƒgƒŒ[ƒ^[•åW
+ã‚¤ãƒ©ã‚¹ãƒˆãƒ¬ãƒ¼ã‚¿ãƒ¼å‹Ÿé›†
 
 Please edit images of tiles in the directory images/ into the ordinals as below:
-‰º‹L‚Ì‡˜”‚Ì—l‚ÉAimages/ ƒfƒBƒŒƒNƒgƒŠ‚Ì”v‚ÌŠG‚ð•`‚¢‚Ä‚­‚¾‚³‚¢B
+ä¸‹è¨˜ã®é †åºæ•°ã®æ§˜ã«ã€images/ ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã®ç‰Œã®çµµã‚’æã„ã¦ãã ã•ã„ã€‚
 
 https://twitter.com/Googoloson210/status/1006491331605041152
 
- abr -------------------------
- 1 2 3 4 5 6 7 8 9
- + ~ ^ , _ ( ) ( )
- 0 n ƒÖ ƒÃ ƒÄ ƒÅ ƒ¡ ƒ³ ƒµ
- ƒ¶ I M N   K T
- -----------------------------
+```
+  1 2 3 4 5 6 7 8 9
+  + Ã— ^ , _ ( ) ( )
+  0 n Ï‰ Îµ Î¶ Î· Î“ Î¦ Î¨
+  Î© I M N â–¡ K T
+```
 
 Plase tell me ( http://twitter.com/koteitan/ ). I'll add you as an editor of github.
 
 ## plan
 - implementation
--- Browser based
--- JavaScript + Ajax
+  - Browser based
+  - JavaScript + Ajax
 - system
--- Multiplayer
--- Emulator
+  - Multiplayer
+  - Emulator
 
 ## credits
-- rule design : Goo‡on ( https://twitter.com/Googoloson210/ )
--             : recruitment! -> on discord https://discord.gg/dhmZua
+- rule design:
+  - Gooâˆžon ( https://twitter.com/Googoloson210/ )
+  - recruitment! -> on discord https://discord.gg/dhmZua
 - illustration: recruitment!
 - programming : koteitan ( http://twitter.com/koteitan/ )
+
+## others
 - community   : on discord https://discord.gg/dhmZua
