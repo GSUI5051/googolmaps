@@ -14,12 +14,11 @@ Please edit images of tiles in the directory images/ into the ordinals as below:
 
 https://twitter.com/Googoloson210/status/1006491331605041152
 
-```abr -------------------------
+```
   1 2 3 4 5 6 7 8 9
   + × ^ , _ ( ) ( )
   0 n ω ε ζ η Γ Φ Ψ
   Ω I M N □ K T
------------------------------
 ```
 
 Plase tell me ( http://twitter.com/koteitan/ ). I'll add you as an editor of github.
