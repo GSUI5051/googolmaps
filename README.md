@@ -21,8 +21,15 @@ https://twitter.com/Googoloson210/status/1006491331605041152
  É∂ I M N Å† K T
  -----------------------------
 
-## 
-Browser based + JavaScript + Ajax = Multiplayer + Emulator
+Plase tell me ( http://twitter.com/koteitan/ ). I'll add you as an editor of github.
+
+## plan
+- implementation
+-- Browser based
+-- JavaScript + Ajax
+- system
+-- Multiplayer
+-- Emulator
 
 ## credits
 - rule design : GooÅáon ( https://twitter.com/Googoloson210/ )
