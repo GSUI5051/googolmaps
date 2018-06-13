@@ -11,7 +11,7 @@ http://www.ukaibutton.com/ordmaj/
 Recruitment illustrator
 イラストレーター募集
 
-Please edit images of tiles in the directory images/ into the ordinals as below:
+Please edit images of tiles in the directory images/ into the ordinals as belowin 24x36 px png file:
 下記の順序数の様に、images/ ディレクトリの牌の絵を描いてください。
 
 https://twitter.com/Googoloson210/status/1006491331605041152

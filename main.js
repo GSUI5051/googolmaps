@@ -21,7 +21,7 @@ var sur; // sur[i] = surface of i th tile={0:back / 1:surface}
 var dep; // dep[i] = depth of i th tile
 var gra; // gra[i] = graphics of i th tile
 var ww; // canvas size
-var tileww=[48,72];
+var tileww=[24,36];
 var initGame=function(){
   pos =new Array(tiles);
   sur =new Array(tiles);
