@@ -1,5 +1,7 @@
 # Ordinal Mahjong
 
+http://www.ukaibutton.com/ordmaj/
+
 ## What is 'OrdinalMahjong' ?
 - 'OrdinalMahjong' is a mahjong game with the tiles on which the ordinals are printed.
 - 順序数麻雀は順序数が書かれた牌で行う麻雀ゲームです。
