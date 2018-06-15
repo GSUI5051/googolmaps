@@ -21,7 +21,6 @@ var sur; // sur[i] = surface of i th tile={0:back / 1:surface}
 var dep; // dep[i] = depth of i th tile
 var gra; // gra[i] = graphics of i th tile
 var ww; // canvas size
-var tileww=[24,36];
 var initGame=function(){
   pos =new Array(tiles);
   sur =new Array(tiles);
@@ -44,24 +43,24 @@ var isRequestedDraw=true;
 var can;
 var ctx;
 var initDraw=function(){
-  gra = new Array(tiles);
-  for(var t=0;t<tiles;t++){
-    gra[t] = new Image();
-    gra[t].src = tilelist[t][0] + "?" + new Date().getTime();  //renderer
-  }  
+  gra = new Image();
+  gra.src = tilefile + "?" + new Date().getTime();  //renderer
   can = document.getElementById("canvas");
   if(!can||!can.getContext) return false;
   ctx = can.getContext('2d');
   ww=[can.width, can.height];
 }
 var procDraw=function(){
-  for(var t=0;t<tiles;t++){
-    if(gra[t].complete){
-      ctx.drawImage(gra[t], 
-                           0,        0,
-                    tileww[0],tileww[1], 
-                    pos[t][0],pos[t][1],
-                    tileww[0],tileww[1]);
+  if(gra.complete){
+    for(var t=0;t<tiles;t++){
+      var tmp=[
+      ];
+      var y0=tileww*tilelist[0][0];
+      ctx.drawImage(gra,
+         tileww[0]*tilelist[t][0], tileww[1]*tilelist[t][1],
+         tileww[0],             tileww[1],
+         pos[t][0],             pos[t][1],
+         tileww[0],             tileww[1]);
     };
   
   }
