@@ -9,7 +9,6 @@ var procAll=function(){ //main loop
   var comp=false;
   if(isRequestedDraw){
     procDraw();
-    isRequestedDraw = false;
   }
   procEvent();
 }
@@ -63,6 +62,7 @@ var procDraw=function(){
          pos[dt][0],                 pos[dt][1],
          tileww [0],                 tileww [1]);
     };
+    isRequestedDraw = false;
   }
 }
 //event---------------------
