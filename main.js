@@ -58,10 +58,10 @@ var procDraw=function(){
       var dt=dep[t]; // convert depth into tile index
       var y0=tileww*tilelist[0][0];
       ctx.drawImage(gra,
-         tileww[0]*tilelist[t][0], tileww[1]*tilelist[t][1],
-         tileww[0],             tileww[1],
-         pos[t][0],             pos[t][1],
-         tileww[0],             tileww[1]);
+         tileww [0]*tilelist[dt][0], tileww [1]*tilelist[dt][1],
+         tileww [0],                 tileww [1],
+         pos[dt][0],                 pos[dt][1],
+         tileww [0],                 tileww [1]);
     };
   }
 }
@@ -90,9 +90,12 @@ var handleMouseDown = function(){
     if(0<l[0] && l[0]<tileww[0] && 
        0<l[1] && l[1]<tileww[1]){
       //hit
-      hittile=t;
+      hittile=dt;
       hitpos[0]=mouseDownPos[0]-pos[dt][0];
       hitpos[1]=mouseDownPos[1]-pos[dt][1];
+      //move to top
+      for(var t2=t-1;t2>=0;t2--) dep[t2+1]=dep[t2];
+      dep[0]=hittile;
       break;
     }
   }
