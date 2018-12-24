@@ -11,6 +11,6 @@ About Googology itself, please see: https://googology.wikia.com/wiki/Googology
 Then now I'll make it a web service which is intaractive and user-generated in 2.0.
 
 - Interactive
- - zoom and swipe to see the maps.
+  - zoom and swipe to see the maps.
 - User-generated
- - can post the new articles.
+  - can post the new articles.
