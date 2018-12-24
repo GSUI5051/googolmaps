@@ -21,13 +21,13 @@ var GoogolMaps.prototype.test(){
     new GoogolFunc(
       [
         ['0','zero.','en','https://en.wikipedia.org/wiki/0','(Mesopotamia)'],
-        ['0','ŒÌ°£','ja','https://ja.wikipedia.org/wiki/0','(•·•Ω•›•ø•ﬂ•¢ ∏Ã¿)']
+        ['0','Èõ∂„ÄÇ','ja','https://ja.wikipedia.org/wiki/0','(„É°„ÇΩ„Éù„Çø„Éü„Ç¢ÊñáÊòé)']
       ],
       -500,undefined,undefined,
       null,null,"#ffffff"
     ),new GoogolFunc(
       ['Tetration','n^^2','en','https://en.wikipedia.org/wiki/Tetration'],
-      ['•∆•»•Ï°º•∑•Á•Û','n^^2','en','https://en.wikipedia.org/wiki/Tetration'],
+      ['„ÉÜ„Éà„É¨„Éº„Ç∑„Éß„É≥','n^^2','en','https://en.wikipedia.org/wiki/Tetration'],
       1901,undefined,undefined,
       null,null,"#ffcccc"
     ),new GoogolFunc(

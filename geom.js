@@ -7,8 +7,8 @@
 */
 /*---------------------------------------
 Geom(_dims, _w[][])
-_dims  = ŸŒ³”
-_w[][] = À•W‹«ŠE w[0][d] to w[1][d], d=ŸŒ³
+_dims  = æ¬¡å…ƒæ•°
+_w[][] = åº§æ¨™å¢ƒç•Œ w[0][d] to w[1][d], d=æ¬¡å…ƒ
 -----------------------------------------*/
 var Geom = function(_dims, _w){
   this.w = _w;
@@ -22,8 +22,8 @@ var Geom = function(_dims, _w){
 };
 /*---------------------------------------
 Camera(_dims, _w[][])
-_dims  = ŸŒ³”
-_w[][] = À•W‹«ŠE w[0][d] to w[1][d], d=ŸŒ³
+_dims  = æ¬¡å…ƒæ•°
+_w[][] = åº§æ¨™å¢ƒç•Œ w[0][d] to w[1][d], d=æ¬¡å…ƒ
 -----------------------------------------*/
 var Camera = function(_pos, _dirmz, _dirx, _screenDistance){
   if(_pos != undefined){
@@ -42,7 +42,7 @@ Camera.prototype.clone=function(){
   return new Camera(this.pos, this.dirmz, this.dirx, this.screenDistance);
 };
 
-//g0 À•WŒn‚ÌˆÊ’uƒxƒNƒgƒ‹ x ‚ğ g1 À•WŒn‚Ì’l‚É•ÏŠ· 
+//g0 åº§æ¨™ç³»ã®ä½ç½®ãƒ™ã‚¯ãƒˆãƒ« x ã‚’ g1 åº§æ¨™ç³»ã®å€¤ã«å¤‰æ› 
 var transPos=function(x, g0, g1){
   var y = new Array(g0.dims);
   for(var d=0;d<g0.dims;d++){
@@ -50,7 +50,7 @@ var transPos=function(x, g0, g1){
   }
   return y;
 };
-//g0 À•WŒn‚Ì•ûŒüƒxƒNƒgƒ‹ x ‚ğ g1 À•WŒn‚Ì’l‚É•ÏŠ· 
+//g0 åº§æ¨™ç³»ã®æ–¹å‘ãƒ™ã‚¯ãƒˆãƒ« x ã‚’ g1 åº§æ¨™ç³»ã®å€¤ã«å¤‰æ› 
 var transScale=function(x, g0, g1){
   var y = new Array(g0.dims);
   for(var d=0;d<g0.dims;d++){
@@ -58,22 +58,22 @@ var transScale=function(x, g0, g1){
   }
   return y;
 };
-//g0 À•WŒn‚Å‚ÌŸŒ³ƒCƒ“ƒfƒNƒX d ‚ÌˆÊ’uƒxƒNƒgƒ‹¬•ª x ‚ğ g1 À•WŒn‚Ì’l‚É•ÏŠ· 
+//g0 åº§æ¨™ç³»ã§ã®æ¬¡å…ƒã‚¤ãƒ³ãƒ‡ã‚¯ã‚¹ d ã®ä½ç½®ãƒ™ã‚¯ãƒˆãƒ«æˆåˆ† x ã‚’ g1 åº§æ¨™ç³»ã®å€¤ã«å¤‰æ› 
 var transPosElem = function(x, d, g0, g1){
   return (x-g0.w[0][d])*g0.iww[d]*g1.ww[d]+g1.w[0][d];
 };
-//g0 À•WŒn‚Å‚ÌŸŒ³ƒCƒ“ƒfƒNƒX d ‚Ì•ûŒüƒxƒNƒgƒ‹¬•ª x ‚ğ g1 À•WŒn‚Ì’l‚É•ÏŠ· 
+//g0 åº§æ¨™ç³»ã§ã®æ¬¡å…ƒã‚¤ãƒ³ãƒ‡ã‚¯ã‚¹ d ã®æ–¹å‘ãƒ™ã‚¯ãƒˆãƒ«æˆåˆ† x ã‚’ g1 åº§æ¨™ç³»ã®å€¤ã«å¤‰æ› 
 var transScaleElem = function(x, d, g0, g1){
   return  x*g0.iww[d]*g1.ww[d];
 };
-//3D À•W gW ‚É‚Ä target ‚ÌˆÊ’u‚É‚ ‚é“_‚ğ
-//ƒJƒƒ‰‚©‚ç‚İ‚½‚Æ‚«‚Ì 2D À•W gS ‚Å‚ÌˆÊ’u (sx[2] ‚É‚Í‹’¼Œa‚ª“ü‚é) (double)
+//3D åº§æ¨™ gW ã«ã¦ target ã®ä½ç½®ã«ã‚ã‚‹ç‚¹ã‚’
+//ã‚«ãƒ¡ãƒ©ã‹ã‚‰ã¿ãŸã¨ãã® 2D åº§æ¨™ gS ã§ã®ä½ç½® (sx[2] ã«ã¯è¦–ç›´å¾„ãŒå…¥ã‚‹) (double)
 var transCam = function(target, c, c0, gW, gS){
   var camr = getRotate(c.dirmz, c.dirx, c0.dirmz, c0.dirx);
   var cx = mulxv(camr, sub(target, c.pos));
   var psz = c.screenDistance/cx[2];
   var psx = [cx[0] * psz, cx[1] * psz , psz];
-  //ƒXƒNƒŠ[ƒ“À•WŒn‚É•ÏŠ·
+  //ã‚¹ã‚¯ãƒªãƒ¼ãƒ³åº§æ¨™ç³»ã«å¤‰æ›
   var sx = new Array(3);
   sx[0] = transPosElem(psx[0], 0, gW, gS);
   sx[1] = transPosElem(psx[1], 1, gW, gS);
@@ -81,13 +81,13 @@ var transCam = function(target, c, c0, gW, gS){
   return sx;
 };
 
-/* a0 ‚ğ a1 ‚ÉˆÚ“®‚·‚é‚½‚ß‚ÌŒ´“_’†S‚Ì‰ñ“] r */
+/* a0 ã‚’ a1 ã«ç§»å‹•ã™ã‚‹ãŸã‚ã®åŸç‚¹ä¸­å¿ƒã®å›è»¢ r */
 var getRotatePos = function(ina0, ina1){
-  // a0Ea1 =  cosƒÆ  (ƒÆ=‰ñ“]Šp)
-  // a0~a1 = e sinƒÆ (ƒÆ=‰ñ“]Šp, e = ²•ûŒü’PˆÊƒxƒNƒgƒ‹)
-  // e sinƒÆ =  a0~a1
-  //  |sinƒÆ| = |a0~a1|
-  // e       = (a0~a1)/|a0~a1| = normalize(a0~a1)
+  // a0ãƒ»a1 =  cosÎ¸  (Î¸=å›è»¢è§’)
+  // a0Ã—a1 = e sinÎ¸ (Î¸=å›è»¢è§’, e = è»¸æ–¹å‘å˜ä½ãƒ™ã‚¯ãƒˆãƒ«)
+  // e sinÎ¸ =  a0Ã—a1
+  //  |sinÎ¸| = |a0Ã—a1|
+  // e       = (a0Ã—a1)/|a0Ã—a1| = normalize(a0Ã—a1)
   var a0 = normalize(ina0);
   var a1 = normalize(ina1); 
   var cos  = dot(a0,a1);
@@ -95,7 +95,7 @@ var getRotatePos = function(ina0, ina1){
   var sin  = abs(c);
   var e = normalize(c);
   if(sin > 10e-80){
-    //’Êí‚ÌŠp“x
+    //é€šå¸¸ã®è§’åº¦
     return ang2rot(e, cos, sin);
   }else{
     if(cos > 0){
@@ -116,7 +116,7 @@ var angTheta2rot = function(a, theta){
  return ang2rot(a, Math.cos(theta), Math.sin(theta));
 }
 
-/* ŒÇ (a0,b0) ‚ğ (a1,b1) ‚ÉˆÚ“®‚·‚é‚½‚ß‚ÌŒ´“_’†S‚Ì‰ñ“] r */
+/* å­¤ (a0,b0) ã‚’ (a1,b1) ã«ç§»å‹•ã™ã‚‹ãŸã‚ã®åŸç‚¹ä¸­å¿ƒã®å›è»¢ r */
 var getRotate = function(ina0, inb0, ina1, inb1){
   if(ina1 != undefined){
     var a0 = normalize(ina0);
@@ -124,24 +124,24 @@ var getRotate = function(ina0, inb0, ina1, inb1){
     var a1 = normalize(ina1);
     var b1 = normalize(inb1);
     
-    // ‚Ü‚¸‚Í a0¨a1 ‚Å‡‚í‚¹‚é‰ñ“] r0
+    // ã¾ãšã¯ a0â†’a1 ã§åˆã‚ã›ã‚‹å›è»¢ r0
     var r0 = getRotatePos(a0, a1); 
-    var b2 = mul(r0, b0); // b2 = r0 Œã‚Ì b0
+    var b2 = mul(r0, b0); // b2 = r0 å¾Œã® b0
     
-    // b2 ‚ğ b1 ‚É“®‚©‚·‰ñ“] r1 ‚ğ‹‚ß‚éB²‚Í a1 ‚É‚·‚ê‚Î‚æ‚¢
+    // b2 ã‚’ b1 ã«å‹•ã‹ã™å›è»¢ r1 ã‚’æ±‚ã‚ã‚‹ã€‚è»¸ã¯ a1 ã«ã™ã‚Œã°ã‚ˆã„
     var cos = dot(b1,b2);
-    var handedness = dot(a1, cross(b2,b1)); //¶«
+    var handedness = dot(a1, cross(b2,b1)); //æŒæ€§
     var sin = abs(cross(b1,b2));
     
     if(abs(sub(b1,b2))<1e-96){
-      return r0;  //‰ñ“]‚È‚µ
+      return r0;  //å›è»¢ãªã—
     }else if(handedness<0){
-      sin = -sin; //•‰‚Ì¶«
+      sin = -sin; //è² ã®æŒæ€§
     }
     var r1 = ang2rot(a1, cos, sin);
-    return mul(r1, r0);// r0¨r1
+    return mul(r1, r0);// r0â†’r1
   }else{
-    return getRotatePos(ina0, inb0); //“_‚Ì‰ñ“]ˆÚ“®‚É•ÏX
+    return getRotatePos(ina0, inb0); //ç‚¹ã®å›è»¢ç§»å‹•ã«å¤‰æ›´
   }
 };
 
@@ -150,13 +150,13 @@ var testGeom=function(){
   str += "ww=" + mat2str(g0.iww) + " , ";
   return str;
 };
-/*  cam.pos =(0,0,0) ‚ÆƒXƒNƒŠ[ƒ“ã‚Ì“_ (sxi, syi) ‚Ì’¼ü‚ğƒJƒƒ‰À•WŒn‚Å•Ô‚· */
+/*  cam.pos =(0,0,0) ã¨ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ä¸Šã®ç‚¹ (sxi, syi) ã®ç›´ç·šã‚’ã‚«ãƒ¡ãƒ©åº§æ¨™ç³»ã§è¿”ã™ */
 var getCamLine=function(cam, sxi, syi){
   var cl = new Array(2);
   c[0]=new Array(3);
   c[1]=new Array(3);
   // cl[0]={0,0,0};
-  //ƒXƒNƒŠ[ƒ“À•WŒn ¨ ƒJƒƒ‰À•WŒn‚É•ÏŠ·
+  //ã‚¹ã‚¯ãƒªãƒ¼ãƒ³åº§æ¨™ç³» â†’ ã‚«ãƒ¡ãƒ©åº§æ¨™ç³»ã«å¤‰æ›
   cl[1][0] = gS.transPos(sxi, 0, gP);
   cl[1][1] = gS.transPos(syi, 1, gP);
   cl[1][2] = cam.screenDistance;
